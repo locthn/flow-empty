@@ -1,7 +1,7 @@
 import com.kms.katalon.core.model.FailureHandling
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import internal.GlobalVariable as GlobalVariable
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 'Initialize test session: Open browser and set view port'
 
@@ -15,19 +15,19 @@ def setup() {
 
 WebUI.navigateToUrl(GlobalVariable.application_domain + '/katalonTrueTest')
 
-"Step 2: Click on button 'Add to cart'"
+"Step 2: Click on button 'Shop Now'"
 
 WebUI.takeScreenshot()
 
-WebUI.verifyElementPresent(findTestObject('AI-Generated/Page_katalonTrueTest/button_add_to_cart'), 20, FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementPresent(findTestObject('AI-Generated/Page_katalonTrueTest/button_shop_now'), 20, FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.verifyMatch(WebUI.getUrl(), GlobalVariable.application_domain + '/katalonTrueTest?/?(?:#.*)?(?:\\?.*)?$', true)
 
-WebUI.enhancedClick(findTestObject('AI-Generated/Page_katalonTrueTest/button_add_to_cart'))
+WebUI.enhancedClick(findTestObject('AI-Generated/Page_katalonTrueTest/button_shop_now'))
 
 "Step 3: Take full page screenshot as checkpoint"
 
-WebUI.takeFullPageScreenshotAsCheckpoint('TC2-Verify Successful Addition of Item to Cart_visual_checkpoint')
+WebUI.takeFullPageScreenshotAsCheckpoint('TC1-Verify Successful Navigation to Katalon True Test Page_visual_checkpoint')
 
 'Terminate test session: Close browser'
 
